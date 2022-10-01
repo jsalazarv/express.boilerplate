@@ -5,9 +5,9 @@ const port = 3000;
 
 app.use(express.json());
 
-app.get('/', (req, res) => {
+app.get('/', (_, res) => {
     res.json({
-        app:"Express Boilerplate",
+        app:"Express Boilerplate Typescript",
         version: "v1.0.0"
     });
 });
