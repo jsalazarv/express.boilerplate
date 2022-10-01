@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.get('/', (_, res) => {
   res.json({
-    app: 'Express Boilerplate Typescript',
+    app: config.app.name,
     version: 'v1.0.0',
   });
 });
