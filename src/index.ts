@@ -1,7 +1,7 @@
 import express from 'express';
+import config from './config';
 
 const app = express();
-const port = 3000;
 
 app.use(express.json());
 
@@ -12,6 +12,8 @@ app.get('/', (_, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`The server is running on port: ${port}`);
+app.listen(config.app.port, () => {
+  console.log(`The server is running on port: ${config.app.port}`);
 });
+
+export default app;
