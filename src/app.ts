@@ -1,4 +1,5 @@
 import express from 'express';
+import { Server } from 'http';
 
 import config from './config';
 import router from './routes';
@@ -12,9 +13,10 @@ export async function setup(): Promise<void> {
 }
 
 // To start server
-export async function start(): Promise<void> {
+export async function start(): Promise<Server> {
   await setup();
-  app.listen(config.app.port, () => {
+
+  return app.listen(config.app.port, () => {
     console.log(`The server is running on port: ${config.app.port}`);
   });
 }
