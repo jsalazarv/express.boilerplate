@@ -4,6 +4,7 @@
 build/
 tmp/
 temp/
+*.sqlite
 
 # Logs
 logs

@@ -17,4 +17,15 @@ const MySQLDataSource = new DataSource({
   subscribers: [],
 });
 
-export default MySQLDataSource;
+const TestDataSource = new DataSource({
+  type: 'sqlite',
+  database: `${config.database.mysql.database}.sqlite`,
+  synchronize: true,
+  logging: false,
+  dropSchema: true,
+  entities: [path.join(__dirname, '../entities/**/*.ts')],
+  migrations: [path.join(__dirname, '../database/migrations/**/*.ts')],
+  subscribers: [],
+});
+
+export default config.app.env === 'test' ? TestDataSource : MySQLDataSource;
