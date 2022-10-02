@@ -1,10 +1,13 @@
-import app from '../../src';
 import supertest from 'supertest';
+
+import { app, start } from '../../src/app';
 
 const server = supertest(app);
 
-describe('GET /', () => {
-  test('Should return the API info', async () => {
+describe('app:routes', () => {
+  beforeAll(async () => await start());
+
+  test('GET /', async () => {
     const response = await server.get('/');
 
     expect(response.status).toBe(200);
