@@ -16,6 +16,7 @@ module.exports = {
     '!<rootDir>/*.config.js',
     '!<rootDir>/coverage/**',
     '!<rootDir>/docs/**',
+    '!<rootDir>/src/database/migrations/**/*.ts',
   ],
   moduleFileExtensions: ['js', 'json', 'ts'],
   rootDir: '.',

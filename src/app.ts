@@ -1,5 +1,7 @@
 import express from 'express';
 import { Server } from 'http';
+import 'reflect-metadata';
+import MySQLDataSource from './database/data-source';
 
 import config from './config';
 import router from './routes';
@@ -8,6 +10,7 @@ export const app = express();
 
 // Initialize app dependencies
 export async function setup(): Promise<void> {
+  await MySQLDataSource.initialize();
   app.use(express.json());
   app.use(router);
 }
