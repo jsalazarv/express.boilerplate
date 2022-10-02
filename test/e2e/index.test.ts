@@ -1,14 +1,23 @@
 import supertest from 'supertest';
 
 import { app, start } from '../../src/app';
+import * as http from 'http';
 
-const server = supertest(app);
+const client = supertest(app);
 
 describe('app:routes', () => {
-  beforeAll(async () => await start());
+  let server: http.Server;
+
+  beforeAll(async () => {
+    server = await start();
+  });
+
+  afterAll(() => {
+    server.close();
+  });
 
   test('GET /', async () => {
-    const response = await server.get('/');
+    const response = await client.get('/');
 
     expect(response.status).toBe(200);
     expect(response.type).toBe('application/json');
