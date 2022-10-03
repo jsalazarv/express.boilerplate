@@ -19,7 +19,7 @@ const MySQLDataSource = new DataSource({
 
 const TestDataSource = new DataSource({
   type: 'sqlite',
-  database: `${config.database.mysql.database}.sqlite`,
+  database: ':memory:',
   synchronize: true,
   logging: false,
   dropSchema: true,
