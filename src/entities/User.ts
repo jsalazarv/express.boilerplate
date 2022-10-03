@@ -2,6 +2,10 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 
 @Entity()
 export class User {
+  constructor(properties: Partial<User>) {
+    Object.assign(this, properties);
+  }
+
   @PrimaryGeneratedColumn()
   id: number;
 
