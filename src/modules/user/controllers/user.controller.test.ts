@@ -1,7 +1,7 @@
-import { index } from '../../../src/controllers/user.controller';
-import { UserRepository } from '../../../src/respositories/UserRepository';
+import { index } from './user.controller';
+import { UserRepository } from '../respositories/user.repository';
 import { getMockReq, getMockRes } from '@jest-mock/express';
-import { User } from '../../../src/entities/User';
+import { User } from '../entities/user.entity';
 
 describe('UserController', () => {
   describe('index()', () => {

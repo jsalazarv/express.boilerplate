@@ -12,7 +12,7 @@ const MySQLDataSource = new DataSource({
   database: config.database.mysql.database,
   synchronize: false,
   logging: false,
-  entities: [path.join(__dirname, '../entities/**/*.ts')],
+  entities: [path.join(__dirname, '../**/*.entity.ts')],
   migrations: [path.join(__dirname, '../database/migrations/**/*.ts')],
   subscribers: [],
 });
@@ -23,7 +23,7 @@ const TestDataSource = new DataSource({
   synchronize: true,
   logging: false,
   dropSchema: true,
-  entities: [path.join(__dirname, '../entities/**/*.ts')],
+  entities: [path.join(__dirname, '../**/*.entity.ts')],
   migrations: [path.join(__dirname, '../database/migrations/**/*.ts')],
   subscribers: [],
 });
