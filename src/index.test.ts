@@ -1,5 +1,5 @@
-import { start } from '../src/app';
-import '../src/index';
+import { start } from './app';
+import './index';
 
 jest.mock('../src/app', () => ({ start: jest.fn() }));
 

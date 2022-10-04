@@ -26,7 +26,7 @@ module.exports = {
     '^.+\\.(t|j)s$': 'ts-jest',
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/lib/', '<rootDir>/coverage/'],
-  setupFiles: ['<rootDir>/test/test.setup.ts'],
+  setupFiles: ['<rootDir>/src/test.setup.ts'],
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   coverageDirectory: '<rootDir>/coverage',
   testEnvironment: 'node',

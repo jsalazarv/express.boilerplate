@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { UserRepository } from '../respositories/UserRepository';
+import { UserRepository } from '../respositories/user.repository';
 
 export const index = async (_: Request, response: Response): Promise<void> => {
   try {

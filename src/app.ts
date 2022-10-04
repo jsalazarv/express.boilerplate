@@ -4,7 +4,7 @@ import 'reflect-metadata';
 import MySQLDataSource from './database/data-source';
 
 import config from './config';
-import router from './routes';
+import router from './router';
 
 export const app = express();
 

@@ -1,8 +1,8 @@
 import supertest from 'supertest';
 
 import http from 'http';
-import { app, start } from '../../src/app';
-import { UserRepository } from '../../src/respositories/UserRepository';
+import { app, start } from '../../../app';
+import { UserRepository } from '../respositories/user.repository';
 
 describe('App User routes', () => {
   let server: http.Server;

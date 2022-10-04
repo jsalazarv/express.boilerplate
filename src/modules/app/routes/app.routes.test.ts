@@ -1,6 +1,6 @@
 import supertest from 'supertest';
 
-import { app, start } from '../../src/app';
+import { app, start } from '../../../app';
 import * as http from 'http';
 
 const client = supertest(app);
