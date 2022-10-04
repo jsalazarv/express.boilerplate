@@ -112,4 +112,22 @@ describe('App User routes', () => {
       ]);
     });
   });
+
+  describe('POST /users', () => {
+    test('Should return error message when something went wrong', async () => {
+      jest.spyOn(UserRepository, 'save').mockRejectedValueOnce(new Error('Internal server error'));
+
+      const payload = {
+        username: 'John',
+        email: 'john@gmail.com',
+        password: 'secret',
+      };
+
+      const response = await client.post('/users').send(payload);
+
+      expect(response.status).toBe(500);
+      expect(response.type).toBe('application/json');
+      expect(response.body).toMatchObject({ status: 500, message: 'Something went wrong, please try again' });
+    });
+  });
 });
